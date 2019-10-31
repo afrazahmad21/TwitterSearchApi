@@ -7,9 +7,10 @@ var bodyParser = require('body-parser')
 require('dotenv').config()
 
 const today = moment().format('YYYY-MM-DD')
+var env = process.env;
 
 const app = express()
-const port = 3002
+const port = env.PORT
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -18,7 +19,7 @@ app.use(bodyParser.json())
 
 app.use(cors())
 
-var env = process.env;
+
 var client = new Twitter({
     consumer_key: env.consumer_key,
     consumer_secret: env.consumer_secret,
