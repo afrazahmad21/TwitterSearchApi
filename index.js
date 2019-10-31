@@ -52,6 +52,10 @@ const getReuqest = ({ name, date, favorite_count }) => {
 
 
 }
+
+app.get('/', (req, res) => {
+    res.status(200).json({ message: "welcome to twitter search api" })
+})
 app.put('/', async (req, res) => {
     try {
         var users = req.body.users;
